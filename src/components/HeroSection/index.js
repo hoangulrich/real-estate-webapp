@@ -35,10 +35,18 @@ const HeroSection = ({ slides }) => {
   }, [current, length]);
 
   const nextSlide = () => {
+    if (timeout.current) {
+      clearTimeout(timeout.current);
+    }
+
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
   const prevSlide = () => {
+    if (timeout.current) {
+      clearTimeout(timeout.current);
+    }
+
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 

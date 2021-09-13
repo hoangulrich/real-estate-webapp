@@ -10,12 +10,12 @@ import {
 import { menuData } from "../../data/MenuData";
 import { Button } from "../GlobalStyle/Button";
 
-const index = () => {
+const index = ({ toggle }) => {
   return (
     <>
       <Nav>
         <Logo>Luxurl</Logo>
-        <MenuBars />
+        <MenuBars onClick={toggle} />
         <NavMenu>
           {menuData.map((item, index) => (
             <NavMenuLinks to={item.link} key={index}>
